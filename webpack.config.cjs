@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+
   entry: './src/index.js',
 
   output: {
@@ -11,22 +12,23 @@ module.exports = {
     clean: true,
   },
 
-  devServer: {
-    static: './dist',
-  },
+  module: {
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: { loader: 'babel-loader' }
+    },
+    {
+      test: /\.css$/i,
+      use: ["style-loader", "css-loader"], // Dodaj to!
+    },
+  ]
+},
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: './dist/index.html',
-    }),
-  ],
-
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
-  },
+      template: './src/index.html'
+    })
+  ]
 };

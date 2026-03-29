@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #1e1e2f;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+}
+
+#projects-list div {
+  padding: 8px;
+  margin-bottom: 5px;
+  background: #2c2c44;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#projects-list div:hover {
+  background: #3a3a5c;
+}
+
+#project-form {
+  margin-top: 15px;
+  display: flex;
+  gap: 5px;
+}
+
+#project-form input {
+  flex: 1;
+  padding: 5px;
+}
+
+#project-form button {
+  padding: 5px 10px;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+/* Todo list */
+#todo-list {
+  margin-bottom: 20px;
+}
+
+.todo {
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid gray;
+  border-radius: 5px;
+}
+
+.todo.high {
+  border-color: red;
+}
+
+.todo.medium {
+  border-color: orange;
+}
+
+.todo.low {
+  border-color: green;
+}
+
+.todo.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Todo form */
+#todo-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#todo-form input,
+#todo-form select,
+#todo-form button {
+  padding: 8px;
+}
