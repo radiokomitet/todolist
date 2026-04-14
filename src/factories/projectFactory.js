@@ -1,7 +1,7 @@
-export function createProject(name){
+export function createProject(name1){
     return{
         id: crypto.randomUUID(),
-        name,
+        name1,
         todos:[]
     };
 }

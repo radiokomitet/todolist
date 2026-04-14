@@ -1,1 +1,1 @@
-Simple todo list https://radiokomitet.github.io/todolist/
+init
