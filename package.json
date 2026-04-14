@@ -3,29 +3,34 @@
   "version": "1.0.0",
   "description": "todoapp",
   "main": "index.js",
+  "type": "module",
+  "homepage": "https://radiokomitet.github.io/todolist",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/radiokomitet/todolist.git"
+    "url": "https://github.com/radiokomitet/todolist.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/radiokomitet/todolist/issues"
   },
-  "homepage": "https://github.com/radiokomitet/todolist#readme",
+  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.29.0",
     "@babel/preset-env": "^7.29.2",
+    "@eslint/js": "^10.0.1",
     "babel-loader": "^10.1.1",
     "css-loader": "^7.1.4",
+    "eslint": "^10.1.0",
+    "gh-pages": "^6.3.0",
+    "globals": "^17.4.0",
     "html-webpack-plugin": "^5.6.6",
+    "prettier": "3.8.1",
     "style-loader": "^4.0.0",
     "webpack": "^5.105.4",
     "webpack-cli": "^7.0.2",

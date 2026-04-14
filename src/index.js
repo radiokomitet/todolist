@@ -4,7 +4,29 @@ import { render } from './ui/dom.js';
 import './style.css'; 
 
 appState.init();
+initializeTheme();
 render();
+
+function initializeTheme() {
+  const theme = localStorage.getItem('todo_theme') || 'light';
+  applyTheme(theme);
+  const toggle = document.getElementById('mode-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+      applyTheme(nextTheme);
+    });
+  }
+}
+
+function applyTheme(theme) {
+  document.body.classList.toggle('dark', theme === 'dark');
+  localStorage.setItem('todo_theme', theme);
+  const toggle = document.getElementById('mode-toggle');
+  if (toggle) {
+    toggle.textContent = theme === 'dark' ? 'Light mode' : 'Night mode';
+  }
+}
 
 // Add project
 document.getElementById('project-form').addEventListener('submit', (e) => {
